@@ -41,7 +41,7 @@
   https://img.shields.io/badge/License-MIT-lightblue.svg
 
   ## Features
-  ![Title] ()
+  ![Title] (employeemanager1.gif)
 
   ## How to contribute - please contact
   John Clark bleakistan@gmail.com (https://github.com/jclark8736)

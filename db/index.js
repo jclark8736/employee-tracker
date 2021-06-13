@@ -44,7 +44,9 @@ class DB {
     return this.connection.query(
       // YOUR CODE HERE
       //CHECK
-      "UPDATE employee role_id = ? WHERE id = ?"
+      "UPDATE employee SET role_id = ? WHERE id = ?",
+      [roleId, employeeId]
+
     );
   }
 
@@ -63,7 +65,7 @@ class DB {
       // id, title, salary FROM role TABLE AND department name FROM department TABLE
       // YOU NEED TO USE LEFT JOIN TO JOIN role and department TABLES
       // YOUR CODE HERE
-      //CHECK
+      
       "SELECT role.id, role.title, role.salary, department.name AS department FROM role LEFT JOIN department on role.department_id = department.id"
       
 
@@ -74,7 +76,7 @@ class DB {
   createRole(role) {
     return this.connection.query(
       // YOUR CODE HERE
-      //CHECK
+      
       "INSERT INTO role SET ?", role
   
       );
