@@ -11,11 +11,15 @@ class DB {
   findAllEmployees() {
     return this.connection.query(
       // CREATE SELECT STATMENT WITH THE FOLLOWING COLUMNS FROM THREE TABLES.
-      // id, first_name, last_name FROM employee TABLE AND department name from department TABLE AND SELECT salary FROM role TABLE
+      // id, first_name, last_name FROM employee 
+      //TABLE AND department name from department TABLE 
+      //AND SELECT salary FROM role TABLE
       // YOUR NEED TO USE LEFT JOINS TO JOIN THREE TABLES
       // YOUR CODE HERE
-      //CHECK
-      "SELECT employee.id, employee.first_name, employee.last_name, department.name AS department, role.salary, LEFT JOIN role on role.id = employee.role_id LEFT JOIN department ON department.id = role.department_id WHERE manager_id = ?;",
+      
+      "SELECT employee.id, employee.first_name, employee.last_name, role.salary AS salary, department.name AS department FROM employee LEFT JOIN role on employee.id = role.id LEFT JOIN department on role.department_id = department.id" 
+      
+      // role.salary LEFT JOIN role on role.id = employee.role_id LEFT JOIN department ON department.id = role.department_id WHERE manager_id = ?;",
       
 
     );
